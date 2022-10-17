@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cc.l4j.autolog.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "MixinChatScreen",
+    "MixinMinecraftClient",
+    "MixinKeyboard",
+    "MixinInGameHud",
+    "MixinClientPlayNetworkHandler",
+    "MixinClientPlayerInteractionManager"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

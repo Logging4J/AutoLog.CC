@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "autolog",
+  "version": "${version}",
+
+  "name": "AutoLog.CC",
+  "description": "Based BlockGame mod",
+  "authors": [
+    "Logging4J"
+  ],
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cc.l4j.autolog.AutoLog"
+    ]
+  },
+  "mixins": [
+    "autolog.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
