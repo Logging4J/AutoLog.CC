@@ -29,6 +29,7 @@ public class Dupe extends Hack {
 
     @Override
     public void onEnable() {
+        if(nullCheck()){return;}
         shouldDupe = true;
         Command.sendMessage("[WARNING] This dupe has been patched By Mojang after Minecraft Release 1.19.1");
         super.onEnable();
@@ -36,6 +37,7 @@ public class Dupe extends Hack {
 
     @Override
     public void onDisable() {
+        if(nullCheck()){return;}
         shouldDupe = false;
         super.onDisable();
     }

@@ -5,6 +5,7 @@ import cc.l4j.autolog.hack.Hack;
 import cc.l4j.autolog.hack.HackManager;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.ServerList;
 import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
