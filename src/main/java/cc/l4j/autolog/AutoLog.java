@@ -1,18 +1,18 @@
 package cc.l4j.autolog;
 
+import cc.l4j.autolog.command.Command;
+import cc.l4j.autolog.command.CommandManager;
 import cc.l4j.autolog.graphics.click.CliclGui;
 import cc.l4j.autolog.hack.Hack;
 import cc.l4j.autolog.hack.HackManager;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.ServerList;
 import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
 
 public class AutoLog implements ModInitializer {
-
     public static final String MOD_NAME = "AutoLog-CC";
     public static AutoLog getInstance = new AutoLog();
     public static MinecraftClient mc = MinecraftClient.getInstance();
@@ -21,6 +21,10 @@ public class AutoLog implements ModInitializer {
     @Override
     public void onInitialize() {
         log("AutoLog.CC Initializing");
+    }
+
+    public void onClose(){
+        log("AutoLog.CC is Stopping");
     }
 
     public void onKeyPress(int key, int action){
@@ -39,6 +43,13 @@ public class AutoLog implements ModInitializer {
         if(nullCheck()){return;}
         for(Hack hack: HackManager.getInstance.getEnabledHacks()){
             hack.onTick();
+        }
+    }
+
+    public void onChatCommand(String message){
+        if(nullCheck()){return;}
+        for(Command command : CommandManager.getCommands()){
+            command.onChat(message);
         }
     }
 

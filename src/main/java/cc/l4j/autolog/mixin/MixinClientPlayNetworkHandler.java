@@ -18,7 +18,9 @@ public class MixinClientPlayNetworkHandler {
     @Inject(method = "sendPacket", at = @At("HEAD"), cancellable = true)
     private void onSendPacket(Packet<?> packet, CallbackInfo callback){
         if(HackManager.getInstance.getHack("ClientSpoofer").isEnabled()) {
-            if (((CustomPayloadC2SPacket) packet).getData().toString(StandardCharsets.UTF_8).toLowerCase().contains("fabric")) {return;}
+            if(packet instanceof CustomPayloadC2SPacket) {
+                if (((CustomPayloadC2SPacket) packet).getData().toString(StandardCharsets.UTF_8).toLowerCase().contains("fabric")) {return;}
+            }
         }
         AutoLog.getInstance.onPacketSend(packet);
     }

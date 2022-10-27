@@ -22,7 +22,7 @@ public class Dupe extends Hack {
     public boolean shouldDupe;
 
     public Dupe() {
-        super("ShulkerDupe", "Dupe patched after 1.19.1", Category.EXPLOITS);
+        super("Dupe", "Dupe hack", Category.EXPLOITS);
         setDisplayName("Dupe[OldShulkerDupe]");
         setKey(GLFW.GLFW_KEY_V);
     }

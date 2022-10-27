@@ -14,4 +14,9 @@ public class MixinMinecraftClient {
     public void onTick(CallbackInfo info){
         AutoLog.getInstance.onTick();
     }
+
+    @Inject(method = "close", at = @At("HEAD"), cancellable = true)
+    public void close(CallbackInfo info){
+        AutoLog.getInstance.onClose();
+    }
 }

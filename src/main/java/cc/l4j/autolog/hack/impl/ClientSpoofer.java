@@ -1,6 +1,7 @@
 package cc.l4j.autolog.hack.impl;
 
 import cc.l4j.autolog.hack.Hack;
+import cc.l4j.autolog.hack.HackManager;
 import cc.l4j.autolog.hack.options.Option;
 import cc.l4j.autolog.hack.options.impl.OptionMode;
 import io.netty.buffer.Unpooled;

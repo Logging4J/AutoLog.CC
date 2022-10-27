@@ -16,7 +16,7 @@ public class CliclGui extends Screen{
         frames = new ArrayList<>();
         int offset = 20;
         for(Hack.Category category: Hack.Category.values()){
-            frames.add(new Frame(category,offset,30,100,30));
+            frames.add(new Frame(category,offset,20,100,30));
             offset += 120;
         }
     }

@@ -14,6 +14,8 @@ public class HackManager {
         add(new Disabler());
         add(new BowBomb());
         add(new Dupe());
+        add(new ClientSpoofer());
+        add(new LawnMower());
     }
 
     public List<Hack> getHacks() {
